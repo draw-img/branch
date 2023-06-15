@@ -1,0 +1,236 @@
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+}
+.header-wrap {
+  position: relative;
+  padding: 10px 20px;
+}
+header .logo {
+  background: url(./images/logo.png)no-repeat;
+  background-position: -120px -80px;
+  width: 120px;
+  height: 22px;
+}
+.progress-wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d0d0d0;
+  display: none;
+}
+.bar {
+  width: 0%;
+  height: inherit;
+  position: absolute;
+  z-index: 100;
+  background-color: black;
+  transition: width 0.4s ease-out;
+}
+header.fixed {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+}
+header.fixed .progress-wrap {
+  display: block;
+}
+header.fixed .header-wrap .logo {
+  background-position: 0 -80px;
+}
+
+.cover-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  /* height: 800px; */
+  background: black url(./images/bg.png) center center / cover no-repeat;
+}
+.dimd {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.cover-title {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+.cover-title .inner {
+  max-width: 700px;
+  margin: auto;
+  padding-bottom: 70px;
+}
+.cover-title h1 {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 34px;
+  font-family: 'Nanum Myeongjo', serif;
+}
+.cover-title span {
+  color: #cecece;
+}
+
+.cont-wrap {
+  position: relative;
+  /* margin-top: 800px; */
+  z-index: 1000;
+  background-color: #fff;
+}
+.content-inner-wrap,
+.inner {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 30px;
+}
+.content-inner-wrap h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.content-inner-wrap h4 {
+  font-size: 21pt;
+}
+
+.content-inner-wrap img {
+  width: 100%;
+}
+.content-inner-wrap p {
+  line-height: 1.6;
+}
+
+.content-bottom {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.content-bottom .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.content-bottom .tag-li {
+  display: flex;
+}
+.content-bottom .tag-li li {
+  color: #959595;
+  border: 1px solid #ddd;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  border-radius: 3rem;
+  padding: 0 10px;
+  min-width: 14px;
+  box-sizing: border-box;
+  margin-right: 8px;
+}
+
+.content-comment {}
+.content-comment .comment-open {
+  font-size: 12px;
+  border: 1px solid #ddd;
+  color: #959595;
+  background-color: #fff;
+  width: 90px;
+  height: 40px;
+  border-radius: 3rem;
+}
+.content-comment .comment-open::before {
+  content: '';
+  display: inline-block;
+  background-image: url(./images/split.png);
+  background-position: 0px 163px;
+  background-size: 219px 269px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  vertical-align: middle;
+}
+.cmt-toggle.hidden {
+  height: 0;
+  overflow: hidden;
+}
+.cmt-toggle {
+  height: auto;
+  transition: all .5s;
+  overflow: visible;
+}
+.comment-wrap {
+  padding-top: 94px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+.comment-wrap::before,
+.comment-wrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.comment-wrap > span {
+  float: left;
+}
+.comment-wrap .cmt-num {}
+
+.comment-input-wrap {
+  padding-top: 20px;
+}
+.comment-input-wrap form {
+  display: flex;
+  gap: 14px;
+}
+.comment-input-wrap .user-img {
+  margin-left: 18px;
+  flex-shrink: 1;
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+}
+.comment-input-wrap .input {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid #eee;
+  min-height: 120px;
+}
+.comment-input-wrap .input textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  padding: 16px;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: 0;
+  min-height: 120px;
+}
+.comment-input-wrap .input button {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  border: 1px solid #ddd;
+  color: #959595;
+  background-color: transparent;
+  border-radius: 3rem;
+  width: 56px;
+  height: 30px;
+  font-size: 12px;
+}
